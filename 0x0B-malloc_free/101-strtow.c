@@ -1,8 +1,8 @@
 #include <stdlib.h>
 
-/**
+/*
  * strtow - char
- * @str: pointer to string params
+ * @str: pointer to string par
  * Return: char
  */
 
@@ -44,19 +44,17 @@ char **strtow(char *str)
 
 	while (*str)
 	{
-		while (*str == ' ' && *str)
+		while(*str==' '&&*str)
 		{
 			str++;
 		}
-		len = 0;
-
-		while (*(str + len) != ' ' && *(str + len))
+		len=0;
+		while(*(str+len)!=' '&&*(str+len))
 		{
-			len += 1;
+			len+=1;
 		}
-		len += 1;
-		col = malloc(sizeof(char) * len);
-
+		len+=1;
+		col=malloc(sizeof(char)*len);
 		if (!col)
 		{
 			for (k = j - 1; k >= 0; k--)
@@ -81,4 +79,4 @@ char **strtow(char *str)
 	}
 	*(f + j) = NULL;
 	return (f);
-} /*yes*/
+}
